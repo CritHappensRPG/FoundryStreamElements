@@ -238,7 +238,7 @@ class so_LinkGenerator extends FormApplication {
     return mergeObject(super.defaultOptions, {
       id: "link-generator",
       title: game.i18n.localize("streamelements.windows.LinkGenerator.title"),
-      template: "modules/crithappensstream/templates/linkGenerator.html",
+      template: "modules/streamelements/templates/linkGenerator.html",
       classes: ["sheet"],
       closeOnSubmit: true,
       resizable: true,
