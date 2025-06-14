@@ -28,12 +28,12 @@ Hooks.on("createChatMessage", (message, options, userId) => {
       roll_result: rollResult,
       roll_formula: rollFormula,
     },
-    displayTime: game.settings.get("streamoverlay", "displayTime"),
-    style: game.settings.get("streamoverlay", "cssEditor"),
-    html: game.settings.get("streamoverlay", "htmlEditor"),
+    displayTime: game.settings.get("streamelements", "displayTime"),
+    style: game.settings.get("streamelements", "cssEditor"),
+    html: game.settings.get("streamelements", "htmlEditor"),
   };
 
   // Send to socket
-  game.socket.emit("module.streamoverlay", res);
+  game.socket.emit("module.streamelements", res);
   console.log(res);
 });

@@ -2,7 +2,7 @@
 let so_waitingRoll = false
 
 Hooks.once("init", function () {
-  const namespace = "streamoverlay";
+  const namespace = "streamelements";
 
   game.socket.on("any", console.log);
 
@@ -209,14 +209,14 @@ class so_LinkGenerator extends FormApplication {
     this.editorArray = {};
   }
   initEditorHtml() {
-    const css = game.settings.get("streamoverlay", "cssEditor");
-    const html = game.settings.get("streamoverlay", "htmlEditor");
+    const css = game.settings.get("streamelements", "cssEditor");
+    const html = game.settings.get("streamelements", "htmlEditor");
 
     this.createEditor("cssEditor", "ace/mode/css", css);
     this.createEditor("htmlEditor", "ace/mode/html", html);
 
     var displayTimeField = document.getElementById("so_displaytime");
-    displayTimeField.value = game.settings.get("streamoverlay", "displayTime");
+    displayTimeField.value = game.settings.get("streamelements", "displayTime");
   }
   createEditor(name, mode, initialValue) {
     this.editorArray[name] = ace.edit(name);
@@ -237,7 +237,7 @@ class so_LinkGenerator extends FormApplication {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       id: "link-generator",
-      title: game.i18n.localize("streamoverlay.windows.LinkGenerator.title"),
+      title: game.i18n.localize("streamelements.windows.LinkGenerator.title"),
       template: "modules/crithappensstream/templates/linkGenerator.html",
       classes: ["sheet"],
       closeOnSubmit: true,

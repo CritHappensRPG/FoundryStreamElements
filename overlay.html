@@ -45,7 +45,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         if (window.location.href.indexOf("?") != -1) initQueryString();
         socket = io();
-        socket.on("module.streamoverlay", (data) => {
+        socket.on("module.streamelements", (data) => {
           console.log(data);
           if (data.type == "roll") {
             if ((actors.length !== 0 &&!actors.includes(data.roll.actorname.toLowerCase())) && (users.length !== 0 &&!users.includes(data.roll.username.toLowerCase())))return;

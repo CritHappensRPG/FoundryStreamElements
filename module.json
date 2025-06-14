@@ -1,8 +1,8 @@
 {
-    "id": "crithappensstream",
-    "title": "Crit Happens Stream Overlay",
+    "id": "streamelements",
+    "title": "Stream Elements",
     "description": "This module adds custom overlays to Foundry VTT for you to use on your stream",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "library": "false",
     "socket": true,
     "manifestPlusVersion": "1.2.0",
@@ -47,8 +47,8 @@
         }
     ],
     "url": "https://github.com/CritHappensRPG/FoundryStreamElements",
-    "manifest": "https://github.com/CritHappensRPG/FoundryStreamElements/releases/download/1.0.0/module.json",
-    "download": "https://github.com/CritHappensRPG/FoundryStreamElements/releases/download/1.0.0/module.zip",
+    "manifest": "https://github.com/CritHappensRPG/FoundryStreamElements/releases/download/1.0.1/module.json",
+    "download": "https://github.com/CritHappensRPG/FoundryStreamElements/releases/download/1.0.1/module.zip",
     "license": "LICENSE",
     "readme": "README.md",
     "media": [

@@ -4,7 +4,7 @@ This module adds the ability to capture dice rolls in OBS (or any streaming soft
 
 ## Installation
 
-To install, import this [Manifest](https://github.com/CritHappensRPG/FoundryStreamElements/releases/download/1.0.0/module.json) into your module browser.
+To install, import this [Manifest](https://github.com/CritHappensRPG/FoundryStreamElements/releases/download/1.0.1/module.json) into your module browser.
 
 ## Usage
 

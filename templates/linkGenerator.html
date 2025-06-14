@@ -32,19 +32,19 @@
     document.getElementById("so_output").innerHTML = so_link;
 
     game.settings.set(
-      "streamoverlay",
+      "streamelements",
       "displayTime",
       dt
     );
 
     game.settings.set(
-      "streamoverlay",
+      "streamelements",
       "cssEditor",
       sp_css
     );
 
     game.settings.set(
-      "streamoverlay",
+      "streamelements",
       "htmlEditor",
       sp_html
     );
@@ -60,36 +60,36 @@
 </script>
 <div id="so_link-generator">
   <div>
-    <h1>{{localize "streamoverlay.windows.LinkGenerator.title"}}</h1>
+    <h1>{{localize "streamelements.windows.LinkGenerator.title"}}</h1>
   </div>
   <div id="so_params">
     <div>
       <input class="so_displaytime so_field" type="number" id="so_displaytime" name="so_displaytime" value="5" min=1 max=60/>
-      <label for="so_displaytime">{{localize "streamoverlay.windows.LinkGenerator.displayTime"}}</label>
+      <label for="so_displaytime">{{localize "streamelements.windows.LinkGenerator.displayTime"}}</label>
     </div>
   </div>
   <div id="so_editors">
-    <h2>{{localize "streamoverlay.windows.LinkGenerator.pageEditor"}}</h2>
+    <h2>{{localize "streamelements.windows.LinkGenerator.pageEditor"}}</h2>
     <div>
       <div id="so_e-css">
-        <h3>{{localize "streamoverlay.windows.LinkGenerator.app.css"}}</h3>
+        <h3>{{localize "streamelements.windows.LinkGenerator.app.css"}}</h3>
         <div class="editor" id="cssEditor"></div>
       </div>
       <div id="so_e-html">
-        <h3>{{localize "streamoverlay.windows.LinkGenerator.app.html"}}</h3>
-        <p>{{localize "streamoverlay.windows.LinkGenerator.app.validVariables"}} : username, actorname, flavor, roll_result, roll_formula</p>
+        <h3>{{localize "streamelements.windows.LinkGenerator.app.html"}}</h3>
+        <p>{{localize "streamelements.windows.LinkGenerator.app.validVariables"}} : username, actorname, flavor, roll_result, roll_formula</p>
         <div class="editor" id="htmlEditor"></div>
       </div>
     </div>
   </div>
   <div id="so_footer">
     <button type="button" onclick="so_generateLinkForm() "class="generate-button">
-      {{localize "streamoverlay.windows.LinkGenerator.generate"}}
+      {{localize "streamelements.windows.LinkGenerator.generate"}}
     </button>
     <div id="so_do">
       <pre id="so_output">http://localhost:30000/modules/crithappensstream/overlay.html</pre>
       <button type="button" id="so_copy" onclick="so_copy()">
-        {{localize "streamoverlay.windows.LinkGenerator.copy"}}
+        {{localize "streamelements.windows.LinkGenerator.copy"}}
       </button>
     </div>
   </div>
