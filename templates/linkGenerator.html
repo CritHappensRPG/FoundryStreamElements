@@ -1,0 +1,96 @@
+<form
+  autocomplete="off"
+  onsubmit="event.preventDefault()"
+  style="display: none"
+></form>
+<script>
+  function so_generateLinkForm() {
+    let dt = document.getElementById("so_displaytime").value;
+    console.log(dt);
+    if (dt-0 > 60) {
+      dt = 60;
+      document.getElementById("so_displaytime").value = 60
+    }
+
+    var cssEditor = ace.edit("cssEditor");
+    var htmlEditor = ace.edit("htmlEditor");
+
+    let sp_css = cssEditor.getValue();
+    let sp_html = htmlEditor.getValue();
+
+    let so_link = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/modules/crithappensstream/overlay.html";
+    
+    let res = {};
+
+    //if (dt && dt != 5) res.dt = dt;
+    if (sp_css) res.cc = sp_css;
+
+    let s = JSON.stringify(res);
+
+    //if (s != "{}") so_link += "?" + so_Base64.encode(encodeURI(s));
+    
+    document.getElementById("so_output").innerHTML = so_link;
+
+    game.settings.set(
+      "streamoverlay",
+      "displayTime",
+      dt
+    );
+
+    game.settings.set(
+      "streamoverlay",
+      "cssEditor",
+      sp_css
+    );
+
+    game.settings.set(
+      "streamoverlay",
+      "htmlEditor",
+      sp_html
+    );
+  }
+
+  function so_copy() {
+    var copyText = document.getElementById("so_output");
+    navigator.clipboard.writeText(copyText.innerHTML);
+    ui.notifications.info(
+      document.getElementById("so_copy").innerHTML + " : " + copyText.innerHTML
+    );
+  }
+</script>
+<div id="so_link-generator">
+  <div>
+    <h1>{{localize "streamoverlay.windows.LinkGenerator.title"}}</h1>
+  </div>
+  <div id="so_params">
+    <div>
+      <input class="so_displaytime so_field" type="number" id="so_displaytime" name="so_displaytime" value="5" min=1 max=60/>
+      <label for="so_displaytime">{{localize "streamoverlay.windows.LinkGenerator.displayTime"}}</label>
+    </div>
+  </div>
+  <div id="so_editors">
+    <h2>{{localize "streamoverlay.windows.LinkGenerator.pageEditor"}}</h2>
+    <div>
+      <div id="so_e-css">
+        <h3>{{localize "streamoverlay.windows.LinkGenerator.app.css"}}</h3>
+        <div class="editor" id="cssEditor"></div>
+      </div>
+      <div id="so_e-html">
+        <h3>{{localize "streamoverlay.windows.LinkGenerator.app.html"}}</h3>
+        <p>{{localize "streamoverlay.windows.LinkGenerator.app.validVariables"}} : username, actorname, flavor, roll_result, roll_formula</p>
+        <div class="editor" id="htmlEditor"></div>
+      </div>
+    </div>
+  </div>
+  <div id="so_footer">
+    <button type="button" onclick="so_generateLinkForm() "class="generate-button">
+      {{localize "streamoverlay.windows.LinkGenerator.generate"}}
+    </button>
+    <div id="so_do">
+      <pre id="so_output">http://localhost:30000/modules/crithappensstream/overlay.html</pre>
+      <button type="button" id="so_copy" onclick="so_copy()">
+        {{localize "streamoverlay.windows.LinkGenerator.copy"}}
+      </button>
+    </div>
+  </div>
+</div>
