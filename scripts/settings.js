@@ -87,7 +87,7 @@ body {
     font-family: 'Cinzel', serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    overflow-y: scroll;
 }
 
 .notif {

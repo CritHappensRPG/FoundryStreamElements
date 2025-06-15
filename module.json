@@ -2,7 +2,7 @@
     "id": "streamelements",
     "title": "Stream Elements",
     "description": "This module adds custom overlays to Foundry VTT for you to use on your stream",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "library": "false",
     "socket": true,
     "manifestPlusVersion": "1.2.0",
