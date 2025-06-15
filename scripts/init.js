@@ -1,8 +1,11 @@
 Hooks.on("createChatMessage", (message, options, userId) => {
   if (!message.isRoll) return;
 
-  const user = game.users.get(userId);
-  if (!user?.isGM) return;
+  const loggedInUser = game.user;
+
+  if (!loggedInUser) return;
+  if (!loggedInUser.isGM) return;
+  if (loggedInUser.name.toLowerCase() === "stream") return;
 
   console.log(message);
 
